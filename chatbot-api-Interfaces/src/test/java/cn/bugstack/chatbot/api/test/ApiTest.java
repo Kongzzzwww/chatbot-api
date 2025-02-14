@@ -58,5 +58,31 @@ public class ApiTest {
         }
 
     }
+    @Test
+    public void test_chatGpt() throws IOException {
+        CloseableHttpClient httpClient = HttpClientBuilder.create().build();
+        HttpPost post = new HttpPost("https://ark.cn-beijing.volces.com/api/v3/chat/completions");
+        post.addHeader("Content-Type","application/json");
+        post.addHeader("Authorization","Bearer ad40c44e-613d-4659-85a0-7b9f6858a32e");
+        String paramJson = "{\n" +
+                "    \"model\": \"ep-20250214044114-56fmk\",\n" +
+                "    \"messages\": [\n" +
+                "        {\n" +
+                "            \"role\": \"user\",\n" +
+                "            \"content\": \"刘倩倩\"\n" +
+                "        }\n" +
+                "    ]\n" +
+                "  }";
+        StringEntity stringEntity = new StringEntity(paramJson, ContentType.create("text/json", "UTF-8"));
+        post.setEntity(stringEntity);
+        CloseableHttpResponse response = httpClient.execute(post);
+        if(response.getStatusLine().getStatusCode() == HttpStatus.SC_OK){
+            String res = EntityUtils.toString(response.getEntity());
+            System.out.println(res);
+
+        }else {
+            System.out.println(response.getStatusLine().getStatusCode());
+        }
+    }
 }
 

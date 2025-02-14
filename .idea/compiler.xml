@@ -16,11 +16,11 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="chatbot-api" options="" />
-      <module name="chatbot-api-Interfaces" options="" />
-      <module name="chatbot-api-application" options="" />
-      <module name="chatbot-api-domain" options="" />
-      <module name="chatbot-api-infrastructure" options="" />
+      <module name="chatbot-api" options="-parameters" />
+      <module name="chatbot-api-Interfaces" options="-parameters" />
+      <module name="chatbot-api-application" options="-parameters" />
+      <module name="chatbot-api-domain" options="-parameters" />
+      <module name="chatbot-api-infrastructure" options="-parameters" />
     </option>
   </component>
 </project>

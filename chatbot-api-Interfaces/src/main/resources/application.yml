@@ -1,2 +1,7 @@
 server:
   port: 8090
+
+chatbot-api:
+  groupId: 28885518425541
+  cookie:
+  openAIKey: ad40c44e-613d-4659-85a0-7b9f6858a32e
